@@ -22,8 +22,10 @@ def nand_gate(x1, x2):
     return 0
 
 def xor_gate(x1, x2):
+    # 第１層
     s1 = nand_gate(x1, x2)
     s2 = or_gate(x1, x2)
+    # 第２層
     return and_gate(s1 ,s2)
 
 print("=== AND ===")
