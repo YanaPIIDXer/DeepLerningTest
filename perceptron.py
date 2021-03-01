@@ -21,6 +21,11 @@ def nand_gate(x1, x2):
     if (np.sum(x * w) + bias) > 0: return 1
     return 0
 
+def xor_gate(x1, x2):
+    s1 = nand_gate(x1, x2)
+    s2 = or_gate(x1, x2)
+    return and_gate(s1 ,s2)
+
 print("=== AND ===")
 print(and_gate(0, 0))
 print(and_gate(0, 1))
@@ -38,3 +43,9 @@ print(nand_gate(0, 0))
 print(nand_gate(0, 1))
 print(nand_gate(1, 0))
 print(nand_gate(1, 1))
+
+print("=== XOR ===")
+print(xor_gate(0, 0))
+print(xor_gate(0, 1))
+print(xor_gate(1, 0))
+print(xor_gate(1, 1))
